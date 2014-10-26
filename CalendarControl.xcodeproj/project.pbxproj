@@ -17,7 +17,6 @@
 		63DD90F219FA61C200C931CB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90F119FA61C200C931CB /* CalendarView.swift */; };
 		63DD90F419FA63A900C931CB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90F319FA63A900C931CB /* CalendarViewController.swift */; };
 		63DD90F619FA79AE00C931CB /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90F519FA79AE00C931CB /* DayCell.swift */; };
-		63DD90F819FA7CE000C931CB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90F719FA7CE000C931CB /* ColorExtension.swift */; };
 		63DD90FA19FA996800C931CB /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90F919FA996800C931CB /* CircleView.swift */; };
 		63DD90FC19FA997E00C931CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DD90FB19FA997E00C931CB /* QuartzCore.framework */; };
 		63DD90FE19FAB23000C931CB /* CalendarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90FD19FAB23000C931CB /* CalendarHeader.swift */; };
@@ -50,7 +49,6 @@
 		63DD90F119FA61C200C931CB /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		63DD90F319FA63A900C931CB /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		63DD90F519FA79AE00C931CB /* DayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
-		63DD90F719FA7CE000C931CB /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		63DD90F919FA996800C931CB /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		63DD90FB19FA997E00C931CB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		63DD90FD19FAB23000C931CB /* CalendarHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeader.swift; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 				63DD90CF19FA5F0000C931CB /* Supporting Files */,
 				63084A5519FBA9B300F646AD /* views */,
 				63DD90F319FA63A900C931CB /* CalendarViewController.swift */,
-				63DD90F719FA7CE000C931CB /* ColorExtension.swift */,
 				63DD90FF19FAB4CC00C931CB /* MonthCalendarCollectionLayout.swift */,
 			);
 			path = CalendarControl;
@@ -264,7 +261,6 @@
 				63DD90F419FA63A900C931CB /* CalendarViewController.swift in Sources */,
 				63DD910019FAB4CC00C931CB /* MonthCalendarCollectionLayout.swift in Sources */,
 				63DD90F619FA79AE00C931CB /* DayCell.swift in Sources */,
-				63DD90F819FA7CE000C931CB /* ColorExtension.swift in Sources */,
 				63DD90FE19FAB23000C931CB /* CalendarHeader.swift in Sources */,
 				63DD90F219FA61C200C931CB /* CalendarView.swift in Sources */,
 				63DD90FA19FA996800C931CB /* CircleView.swift in Sources */,

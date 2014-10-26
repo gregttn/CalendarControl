@@ -21,7 +21,7 @@ class CalendarView: UIControl, UICollectionViewDelegate, UICollectionViewDataSou
     
     lazy var daysCollectionView: UICollectionView = {
         var collectionView = UICollectionView(frame: self.frame, collectionViewLayout: MonthCalendarCollectionLayout(frame: self.frame, headerSize: CGSizeMake(self.frame.width, 63)))
-        collectionView.backgroundColor = UIColor.appGreen()
+        collectionView.backgroundColor = UIColor.whiteColor()
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.scrollEnabled = false
@@ -42,7 +42,6 @@ class CalendarView: UIControl, UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as DayCell
-        cell.backgroundColor = UIColor.appGreen()
         
         if indexPath.row >= daysOffset {
             var dayToDisplay = indexPath.row - daysOffset + 1

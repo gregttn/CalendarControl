@@ -61,7 +61,7 @@ class DayCell: UICollectionViewCell {
     }
     
     private func insertSelectedBackground() {
-        let selectionMarker = CircleView(frame: self.dayLabel.frame, fillColor: UIColor.whiteColor())
+        let selectionMarker = CircleView(frame: self.dayLabel.frame, fillColor: UIColor.lightGrayColor())
         selectionMarker.tag = selectedBackgroundId;
         insertSubview(selectionMarker, atIndex:0)
     }
