@@ -10,6 +10,7 @@ import UIKit
 import QuartzCore
 
 class CircleView: UIView {
+    private let defaultMargin: CGFloat = 2
     var fillColor: UIColor = UIColor.whiteColor()
     
     init(frame: CGRect, fillColor color: UIColor) {
@@ -23,7 +24,7 @@ class CircleView: UIView {
     }
     
     override func drawRect(rect: CGRect) {
-        let drawingRectangle = CGRectMake(1,1,rect.size.width - 2,rect.size.height  - 2)
+        let drawingRectangle = CGRectMake(1,1,rect.size.width - defaultMargin,rect.size.height  - defaultMargin)
         let context: CGContextRef = UIGraphicsGetCurrentContext()
         
         CGContextSetFillColorWithColor(context, fillColor.CGColor);

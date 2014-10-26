@@ -31,4 +31,8 @@ extension NSCalendar {
         
         return self.component(NSCalendarUnit.WeekdayCalendarUnit, fromDate: self.dateFromComponents(dateComponents)!) - 1
     }
+    
+    func basicComponents(fromDate: NSDate) -> NSDateComponents {
+        return self.components(NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: fromDate)
+    }
 }
