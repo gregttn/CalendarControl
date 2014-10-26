@@ -29,11 +29,13 @@ class DayCell: UICollectionViewCell {
     
     func updateWithDay(day: Int) {
         dayLabel.text = "\(day)"
-        dayLabel.frame = createBestFrame()
    }
     
     private func createBestFrame() -> CGRect {
-        let bestSize: CGSize = dayLabel.sizeThatFits(frame.size)
+        let label = UILabel()
+        label.text = "00"
+        
+        let bestSize: CGSize = label.sizeThatFits(frame.size)
         let frameWidth = bestSize.width + circlePadding > frame.size.width ? frame.size.width : bestSize.width + circlePadding;
         let frameHeight = bestSize.height + circlePadding > frame.size.height ? frame.size.height : bestSize.height + circlePadding;
         
@@ -45,7 +47,7 @@ class DayCell: UICollectionViewCell {
     }
     
     private func buildCell() {
-        dayLabel.frame = CGRectZero
+        dayLabel.frame = createBestFrame()
         dayLabel.backgroundColor = UIColor.clearColor()
         dayLabel.textAlignment = NSTextAlignment.Center
         
