@@ -66,4 +66,17 @@ class CalendarView: UIControl, UICollectionViewDelegate, UICollectionViewDataSou
         
         return header
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.applyForCell(indexPath, action: { cell in cell.highlight() })
+    }
+    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        self.applyForCell(indexPath, action: { cell in cell.unhighlight() })
+    }
+    
+    private func applyForCell(indexPath: NSIndexPath, action: (DayCell) -> ()) {
+        var highlightedCell = daysCollectionView.cellForItemAtIndexPath(indexPath) as DayCell
+        action(highlightedCell)
+    }
 }

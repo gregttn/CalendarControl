@@ -10,8 +10,12 @@ import UIKit
 
 class DayCell: UICollectionViewCell {
     private let selectedBackgroundId = 11
+    private let highligtedBackgroundId = 12
     private let circlePadding: CGFloat = 14.0
     private let dayLabel: UILabel = UILabel()
+    
+    var highlightedColour = UIColor(red: 232.0/255.0, green: 232.0/255.0, blue: 238.0/255.0, alpha: 1)
+    var selectedColour = UIColor.lightGrayColor()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,25 +53,29 @@ class DayCell: UICollectionViewCell {
     }
     
     func selected() {
-        insertSelectedBackground()
+        insertSelectedBackground(selectedColour, backgroundId: selectedBackgroundId)
         
         dayLabel.font = UIFont.boldSystemFontOfSize(dayLabel.font.pointSize)
     }
     
-    func unselected() {
-        removeSelectedBackground()
-        
-        dayLabel.font = UIFont.systemFontOfSize(dayLabel.font.pointSize)
+    func highlight() {
+        insertSelectedBackground(highlightedColour, backgroundId: highligtedBackgroundId)
     }
     
-    private func insertSelectedBackground() {
-        let selectionMarker = CircleView(frame: self.dayLabel.frame, fillColor: UIColor.lightGrayColor())
-        selectionMarker.tag = selectedBackgroundId;
-        insertSubview(selectionMarker, atIndex:0)
+    func unhighlight() {
+        removeSelectedBackground(highligtedBackgroundId)
     }
     
-    private func removeSelectedBackground() {
-        let selectionMarker = viewWithTag(selectedBackgroundId)
+    private func insertSelectedBackground(highlightColor: UIColor, backgroundId: Int) {
+        if viewWithTag(backgroundId) == nil {
+            let selectionMarker = CircleView(frame: self.dayLabel.frame, fillColor: highlightColor)
+            selectionMarker.tag = backgroundId;
+            insertSubview(selectionMarker, atIndex:0)
+        }
+    }
+    
+    private func removeSelectedBackground(backgroundId: Int) {
+        let selectionMarker = viewWithTag(backgroundId)
         
         if var marker = selectionMarker {
             marker.removeFromSuperview()
