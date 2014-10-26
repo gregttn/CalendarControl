@@ -26,7 +26,7 @@ class CalendarView: UIControl, UICollectionViewDelegate, UICollectionViewDataSou
         collectionView.dataSource = self
         collectionView.scrollEnabled = false
         collectionView.registerClass(DayCell.self, forCellWithReuseIdentifier: self.cellIdentifier)
-        collectionView.registerClass(WeekHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: self.headerCellIdentifier)
+        collectionView.registerClass(CalendarHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: self.headerCellIdentifier)
         
         return collectionView
     }()
@@ -61,7 +61,7 @@ class CalendarView: UIControl, UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        var header: WeekHeader =  collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerCellIdentifier, forIndexPath: indexPath) as WeekHeader
+        var header: CalendarHeader =  collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerCellIdentifier, forIndexPath: indexPath) as CalendarHeader
 
         header.updateHeaderText(calendar.monthNameFor(currentDate))
         

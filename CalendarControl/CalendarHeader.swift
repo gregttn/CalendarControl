@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeekHeader: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource {
+class CalendarHeader: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource {
     private let dayInitial = NSDateFormatter().shortWeekdaySymbols
     private let cellIdentifier = "cId"
     private let cellHeight:CGFloat = 30
@@ -58,7 +58,7 @@ class WeekHeader: UICollectionReusableView, UICollectionViewDelegate, UICollecti
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.scrollEnabled = false
-        collectionView.registerClass(WeekDayCell.self, forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.registerClass(WeekDayNameCell.self, forCellWithReuseIdentifier: cellIdentifier)
         
         return collectionView
     }
@@ -72,7 +72,7 @@ class WeekHeader: UICollectionReusableView, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as WeekDayCell
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as WeekDayNameCell
         cell.weekNameLabel.text = dayInitial[indexPath.row] as? String
         
         return cell

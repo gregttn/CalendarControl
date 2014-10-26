@@ -20,9 +20,9 @@
 		63DD90F819FA7CE000C931CB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90F719FA7CE000C931CB /* ColorExtension.swift */; };
 		63DD90FA19FA996800C931CB /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90F919FA996800C931CB /* CircleView.swift */; };
 		63DD90FC19FA997E00C931CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DD90FB19FA997E00C931CB /* QuartzCore.framework */; };
-		63DD90FE19FAB23000C931CB /* WeekHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90FD19FAB23000C931CB /* WeekHeader.swift */; };
+		63DD90FE19FAB23000C931CB /* CalendarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90FD19FAB23000C931CB /* CalendarHeader.swift */; };
 		63DD910019FAB4CC00C931CB /* MonthCalendarCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90FF19FAB4CC00C931CB /* MonthCalendarCollectionLayout.swift */; };
-		63DD910219FAE8AC00C931CB /* WeekDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD910119FAE8AC00C931CB /* WeekDayCell.swift */; };
+		63DD910219FAE8AC00C931CB /* WeekDayNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD910119FAE8AC00C931CB /* WeekDayNameCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +53,9 @@
 		63DD90F719FA7CE000C931CB /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		63DD90F919FA996800C931CB /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		63DD90FB19FA997E00C931CB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		63DD90FD19FAB23000C931CB /* WeekHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekHeader.swift; sourceTree = "<group>"; };
+		63DD90FD19FAB23000C931CB /* CalendarHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeader.swift; sourceTree = "<group>"; };
 		63DD90FF19FAB4CC00C931CB /* MonthCalendarCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCalendarCollectionLayout.swift; sourceTree = "<group>"; };
-		63DD910119FAE8AC00C931CB /* WeekDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayCell.swift; sourceTree = "<group>"; };
+		63DD910119FAE8AC00C931CB /* WeekDayNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayNameCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +83,8 @@
 				63DD90F119FA61C200C931CB /* CalendarView.swift */,
 				63DD90F519FA79AE00C931CB /* DayCell.swift */,
 				63DD90F919FA996800C931CB /* CircleView.swift */,
-				63DD90FD19FAB23000C931CB /* WeekHeader.swift */,
-				63DD910119FAE8AC00C931CB /* WeekDayCell.swift */,
+				63DD90FD19FAB23000C931CB /* CalendarHeader.swift */,
+				63DD910119FAE8AC00C931CB /* WeekDayNameCell.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -265,10 +265,10 @@
 				63DD910019FAB4CC00C931CB /* MonthCalendarCollectionLayout.swift in Sources */,
 				63DD90F619FA79AE00C931CB /* DayCell.swift in Sources */,
 				63DD90F819FA7CE000C931CB /* ColorExtension.swift in Sources */,
-				63DD90FE19FAB23000C931CB /* WeekHeader.swift in Sources */,
+				63DD90FE19FAB23000C931CB /* CalendarHeader.swift in Sources */,
 				63DD90F219FA61C200C931CB /* CalendarView.swift in Sources */,
 				63DD90FA19FA996800C931CB /* CircleView.swift in Sources */,
-				63DD910219FAE8AC00C931CB /* WeekDayCell.swift in Sources */,
+				63DD910219FAE8AC00C931CB /* WeekDayNameCell.swift in Sources */,
 				63DD90D219FA5F0000C931CB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

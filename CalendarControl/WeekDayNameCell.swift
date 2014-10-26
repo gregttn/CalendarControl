@@ -9,7 +9,7 @@
 import UIKit
 
 
-class WeekDayCell: UICollectionViewCell {
+class WeekDayNameCell: UICollectionViewCell {
     let weekNameLabel: UILabel = UILabel()
     
     override init(frame: CGRect) {
