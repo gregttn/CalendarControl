@@ -43,7 +43,7 @@ class CalendarView: UIControl, UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as DayCell
         
-        if indexPath.row >= daysOffset {
+        if isValidDayCell(indexPath) {
             var dayToDisplay = indexPath.row - daysOffset + 1
             cell.updateWithDay(dayToDisplay)
             
@@ -68,15 +68,27 @@ class CalendarView: UIControl, UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.applyForCell(indexPath, action: { cell in cell.highlight() })
+        self.applyForCell(indexPath) { cell in cell.highlight() }
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        self.applyForCell(indexPath, action: { cell in cell.unhighlight() })
+        self.applyForCell(indexPath) { cell in cell.unhighlight() }
+    }
+    
+    func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return isValidDayCell(indexPath)
+    }
+    
+    func collectionView(collectionView: UICollectionView, shouldDeselectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return isValidDayCell(indexPath)
     }
     
     private func applyForCell(indexPath: NSIndexPath, action: (DayCell) -> ()) {
         var highlightedCell = daysCollectionView.cellForItemAtIndexPath(indexPath) as DayCell
         action(highlightedCell)
+    }
+    
+    private func isValidDayCell(indexPath: NSIndexPath) -> Bool {
+        return indexPath.row >= daysOffset
     }
 }
