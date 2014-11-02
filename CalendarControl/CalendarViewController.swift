@@ -17,8 +17,6 @@ class CalendarViewController: UIViewController {
         view.backgroundColor = UIColor.whiteColor()
         
         calendarView.frame = CGRectMake(0, 0, view.frame.width, view.frame.height)
-        calendarView.backgroundColor = UIColor.whiteColor()
-        
         view.addSubview(calendarView)
     }
     

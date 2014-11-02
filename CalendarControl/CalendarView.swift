@@ -62,7 +62,7 @@ class CalendarView: UIControl, UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         var header: CalendarHeader =  collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerCellIdentifier, forIndexPath: indexPath) as CalendarHeader
         
-        header.updateHeaderText("\(calendar.monthNameFor(currentDate)) \(calendar.basicComponents(currentDate).year)")
+        header.displayMonth = "\(calendar.monthNameFor(currentDate)) \(calendar.basicComponents(currentDate).year)"
         
         return header
     }

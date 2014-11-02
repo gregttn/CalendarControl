@@ -70,16 +70,14 @@ class DayCell: UICollectionViewCell {
     
     private func insertSelectedBackground(highlightColor: UIColor, backgroundId: Int) {
         if viewWithTag(backgroundId) == nil {
-            let selectionMarker = CircleView(frame: self.dayLabel.frame, fillColor: highlightColor)
+            let selectionMarker = CircleView(frame: dayLabel.frame, fillColor: highlightColor)
             selectionMarker.tag = backgroundId;
             insertSubview(selectionMarker, atIndex:0)
         }
     }
     
     private func removeSelectedBackground(backgroundId: Int) {
-        let selectionMarker = viewWithTag(backgroundId)
-        
-        if var marker = selectionMarker {
+        if var marker = viewWithTag(backgroundId) {
             marker.removeFromSuperview()
         }
     }

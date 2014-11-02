@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		634FD68C1A05923000D795BA /* MonthNavigationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634FD68B1A05923000D795BA /* MonthNavigationHeader.swift */; };
 		639EBD8119FD72D8007D40D0 /* NSCalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EBD8019FD72D8007D40D0 /* NSCalendarExtension.swift */; };
 		63DD90D219FA5F0000C931CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90D119FA5F0000C931CB /* AppDelegate.swift */; };
 		63DD90D419FA5F0000C931CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90D319FA5F0000C931CB /* ViewController.swift */; };
@@ -21,7 +22,7 @@
 		63DD90FC19FA997E00C931CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DD90FB19FA997E00C931CB /* QuartzCore.framework */; };
 		63DD90FE19FAB23000C931CB /* CalendarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90FD19FAB23000C931CB /* CalendarHeader.swift */; };
 		63DD910019FAB4CC00C931CB /* MonthCalendarCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90FF19FAB4CC00C931CB /* MonthCalendarCollectionLayout.swift */; };
-		63DD910219FAE8AC00C931CB /* WeekDayNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD910119FAE8AC00C931CB /* WeekDayNameCell.swift */; };
+		63DD910219FAE8AC00C931CB /* WeekdaySymbolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD910119FAE8AC00C931CB /* WeekdaySymbolCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		634FD68B1A05923000D795BA /* MonthNavigationHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthNavigationHeader.swift; sourceTree = "<group>"; };
 		639EBD8019FD72D8007D40D0 /* NSCalendarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCalendarExtension.swift; sourceTree = "<group>"; };
 		63DD90CC19FA5F0000C931CB /* CalendarControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DD90D019FA5F0000C931CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +55,7 @@
 		63DD90FB19FA997E00C931CB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		63DD90FD19FAB23000C931CB /* CalendarHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeader.swift; sourceTree = "<group>"; };
 		63DD90FF19FAB4CC00C931CB /* MonthCalendarCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCalendarCollectionLayout.swift; sourceTree = "<group>"; };
-		63DD910119FAE8AC00C931CB /* WeekDayNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayNameCell.swift; sourceTree = "<group>"; };
+		63DD910119FAE8AC00C931CB /* WeekdaySymbolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekdaySymbolCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +84,8 @@
 				63DD90F519FA79AE00C931CB /* DayCell.swift */,
 				63DD90F919FA996800C931CB /* CircleView.swift */,
 				63DD90FD19FAB23000C931CB /* CalendarHeader.swift */,
-				63DD910119FAE8AC00C931CB /* WeekDayNameCell.swift */,
+				63DD910119FAE8AC00C931CB /* WeekdaySymbolCell.swift */,
+				634FD68B1A05923000D795BA /* MonthNavigationHeader.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -264,7 +267,8 @@
 				63DD90FE19FAB23000C931CB /* CalendarHeader.swift in Sources */,
 				63DD90F219FA61C200C931CB /* CalendarView.swift in Sources */,
 				63DD90FA19FA996800C931CB /* CircleView.swift in Sources */,
-				63DD910219FAE8AC00C931CB /* WeekDayNameCell.swift in Sources */,
+				63DD910219FAE8AC00C931CB /* WeekdaySymbolCell.swift in Sources */,
+				634FD68C1A05923000D795BA /* MonthNavigationHeader.swift in Sources */,
 				63DD90D219FA5F0000C931CB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
