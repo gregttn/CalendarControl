@@ -10,7 +10,6 @@
 		634FD68C1A05923000D795BA /* MonthNavigationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634FD68B1A05923000D795BA /* MonthNavigationHeader.swift */; };
 		639EBD8119FD72D8007D40D0 /* NSCalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EBD8019FD72D8007D40D0 /* NSCalendarExtension.swift */; };
 		63DD90D219FA5F0000C931CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90D119FA5F0000C931CB /* AppDelegate.swift */; };
-		63DD90D419FA5F0000C931CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90D319FA5F0000C931CB /* ViewController.swift */; };
 		63DD90D719FA5F0000C931CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DD90D519FA5F0000C931CB /* Main.storyboard */; };
 		63DD90D919FA5F0000C931CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DD90D819FA5F0000C931CB /* Images.xcassets */; };
 		63DD90DC19FA5F0000C931CB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DD90DA19FA5F0000C931CB /* LaunchScreen.xib */; };
@@ -41,7 +40,6 @@
 		63DD90CC19FA5F0000C931CB /* CalendarControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DD90D019FA5F0000C931CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63DD90D119FA5F0000C931CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63DD90D319FA5F0000C931CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		63DD90D619FA5F0000C931CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63DD90D819FA5F0000C931CB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		63DD90DB19FA5F0000C931CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 			children = (
 				63084A5619FBBE9C00F646AD /* extensions */,
 				63DD90D119FA5F0000C931CB /* AppDelegate.swift */,
-				63DD90D319FA5F0000C931CB /* ViewController.swift */,
 				63DD90D519FA5F0000C931CB /* Main.storyboard */,
 				63DD90D819FA5F0000C931CB /* Images.xcassets */,
 				63DD90DA19FA5F0000C931CB /* LaunchScreen.xib */,
@@ -260,7 +257,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				639EBD8119FD72D8007D40D0 /* NSCalendarExtension.swift in Sources */,
-				63DD90D419FA5F0000C931CB /* ViewController.swift in Sources */,
 				63DD90F419FA63A900C931CB /* CalendarViewController.swift in Sources */,
 				63DD910019FAB4CC00C931CB /* MonthCalendarCollectionLayout.swift in Sources */,
 				63DD90F619FA79AE00C931CB /* DayCell.swift in Sources */,
