@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalendarView: UIControl, UICollectionViewDelegate, UICollectionViewDataSource {
+class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     private let cellIdentifier = "DayCell"
     private let headerCellIdentifier = "HeaderCell"
     private let calendar = NSCalendar.currentCalendar()
@@ -20,7 +20,7 @@ class CalendarView: UIControl, UICollectionViewDelegate, UICollectionViewDataSou
     
     
     lazy var daysCollectionView: UICollectionView = {
-        var collectionView = UICollectionView(frame: self.frame, collectionViewLayout: MonthCalendarCollectionLayout(frame: self.frame, headerSize: CGSizeMake(self.frame.width, 63)))
+        var collectionView = UICollectionView(frame: self.frame, collectionViewLayout: MonthCalendarCollectionLayout(frame: self.frame, headerSize: CGSizeMake(self.frame.width, 80)))
         collectionView.backgroundColor = UIColor.whiteColor()
         collectionView.delegate = self
         collectionView.dataSource = self

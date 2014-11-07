@@ -36,16 +36,22 @@ class MonthNavigationHeader: UICollectionReusableView {
     }
     
     func build() {
-        title.frame = frame
+        title.sizeToFit()
         title.textAlignment = NSTextAlignment.Center
-
+        title.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
         addSubview(title)
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[superview]-(<=1)-[label]", options: NSLayoutFormatOptions.AlignAllCenterY, metrics: nil, views: ["superview":self, "label":title]))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[superview]-(<=1)-[label]", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: ["superview":self, "label":title]))
+
         
         addSubview(next)
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("[btn]|", options: NSLayoutFormatOptions.AlignAllLeft, metrics: nil, views: ["btn":next]))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[superview]-(<=1)-[btn]", options: NSLayoutFormatOptions.AlignAllCenterY, metrics: nil, views: ["superview":self, "btn":next]))
         
         addSubview(previous)
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[btn]", options: NSLayoutFormatOptions.AlignAllLeft, metrics: nil, views: ["btn":previous]))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[superview]-(<=1)-[btn]", options: NSLayoutFormatOptions.AlignAllCenterY, metrics: nil, views: ["superview":self, "btn":previous]))
     }
     
     private func navigationButton(title: String, tag: Int) -> UIButton {
@@ -56,9 +62,7 @@ class MonthNavigationHeader: UICollectionReusableView {
         button.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Highlighted)
         button.sizeToFit()
         button.setTranslatesAutoresizingMaskIntoConstraints(false)
-        button.autoresizingMask = UIViewAutoresizing.FlexibleRightMargin
         button.addTarget(self, action: "navigationButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
-        
         return button
     }
     

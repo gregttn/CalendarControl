@@ -13,7 +13,6 @@ class CalendarHeader: UICollectionReusableView, UICollectionViewDelegate, UIColl
     private let cellIdentifier = "cId"
     private let headerIdentifier = "headerId"
     private let cellHeight:CGFloat = 30
-    private let headerLabelHeight: CGFloat = 33
     var displayMonth: String = ""
     
     private var calendarInfo: UICollectionView?
@@ -39,7 +38,7 @@ class CalendarHeader: UICollectionReusableView, UICollectionViewDelegate, UIColl
     private func createCollectionView() -> UICollectionView {
         let collectionFrame = CGRectMake(0, 0, frame.width, frame.height)
     
-        let collectionView = UICollectionView(frame: collectionFrame, collectionViewLayout: MonthCalendarCollectionLayout(frame: collectionFrame, headerSize: CGSizeMake(frame.width, headerLabelHeight), itemHeight: cellHeight))
+        let collectionView = UICollectionView(frame: collectionFrame, collectionViewLayout: MonthCalendarCollectionLayout(frame: collectionFrame, headerSize: CGSizeMake(frame.width, frame.height-cellHeight), itemHeight: cellHeight))
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView.delegate = self
         collectionView.dataSource = self
