@@ -48,7 +48,7 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
             cell.updateWithDay(dayToDisplay)
             
             if dayToDisplay == calendar.dayOfTheMonthFor(currentDate) {
-                cell.selected()
+                cell.select()
             }
         }
         

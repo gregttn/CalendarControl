@@ -29,7 +29,11 @@ class DayCell: UICollectionViewCell {
     
     func updateWithDay(day: Int) {
         dayLabel.text = "\(day)"
-   }
+    }
+    
+    func clear() {
+        dayLabel.text = ""
+    }
     
     private func createBestFrame() -> CGRect {
         let label = UILabel()
@@ -54,10 +58,14 @@ class DayCell: UICollectionViewCell {
         addSubview(dayLabel)
     }
     
-    func selected() {
+    func select() {
         insertSelectedBackground(selectedColour, backgroundId: selectedBackgroundId)
         
         dayLabel.font = UIFont.boldSystemFontOfSize(dayLabel.font.pointSize)
+    }
+    
+    func deselect() {
+        removeSelectedBackground(selectedBackgroundId)
     }
     
     func highlight() {
