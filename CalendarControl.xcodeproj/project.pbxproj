@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63094AA91A10128D0081978A /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63094AA81A10128D0081978A /* NSDateExtension.swift */; };
+		63094AAB1A101F4A0081978A /* NSDateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63094AAA1A101F4A0081978A /* NSDateExtensionTests.swift */; };
+		63094AAC1A1020770081978A /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63094AA81A10128D0081978A /* NSDateExtension.swift */; };
 		634FD68C1A05923000D795BA /* MonthNavigationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634FD68B1A05923000D795BA /* MonthNavigationHeader.swift */; };
 		639EBD8119FD72D8007D40D0 /* NSCalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EBD8019FD72D8007D40D0 /* NSCalendarExtension.swift */; };
 		63DD90D219FA5F0000C931CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90D119FA5F0000C931CB /* AppDelegate.swift */; };
 		63DD90D719FA5F0000C931CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DD90D519FA5F0000C931CB /* Main.storyboard */; };
 		63DD90D919FA5F0000C931CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DD90D819FA5F0000C931CB /* Images.xcassets */; };
 		63DD90DC19FA5F0000C931CB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DD90DA19FA5F0000C931CB /* LaunchScreen.xib */; };
-		63DD90E819FA5F0100C931CB /* CalendarControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90E719FA5F0100C931CB /* CalendarControlTests.swift */; };
 		63DD90F219FA61C200C931CB /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90F119FA61C200C931CB /* CalendarView.swift */; };
 		63DD90F419FA63A900C931CB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90F319FA63A900C931CB /* CalendarViewController.swift */; };
 		63DD90F619FA79AE00C931CB /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90F519FA79AE00C931CB /* DayCell.swift */; };
@@ -22,6 +24,8 @@
 		63DD90FE19FAB23000C931CB /* CalendarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90FD19FAB23000C931CB /* CalendarHeader.swift */; };
 		63DD910019FAB4CC00C931CB /* MonthCalendarCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD90FF19FAB4CC00C931CB /* MonthCalendarCollectionLayout.swift */; };
 		63DD910219FAE8AC00C931CB /* WeekdaySymbolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD910119FAE8AC00C931CB /* WeekdaySymbolCell.swift */; };
+		63F8EE801A102232001C5F5B /* NSCalendarExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F8EE7F1A102232001C5F5B /* NSCalendarExtensionTests.swift */; };
+		63F8EE821A10232A001C5F5B /* NSCalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EBD8019FD72D8007D40D0 /* NSCalendarExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63094AA81A10128D0081978A /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		63094AAA1A101F4A0081978A /* NSDateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensionTests.swift; sourceTree = "<group>"; };
 		634FD68B1A05923000D795BA /* MonthNavigationHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthNavigationHeader.swift; sourceTree = "<group>"; };
 		639EBD8019FD72D8007D40D0 /* NSCalendarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCalendarExtension.swift; sourceTree = "<group>"; };
 		63DD90CC19FA5F0000C931CB /* CalendarControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +51,6 @@
 		63DD90DB19FA5F0000C931CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		63DD90E119FA5F0100C931CB /* CalendarControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalendarControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DD90E619FA5F0100C931CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63DD90E719FA5F0100C931CB /* CalendarControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarControlTests.swift; sourceTree = "<group>"; };
 		63DD90F119FA61C200C931CB /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		63DD90F319FA63A900C931CB /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		63DD90F519FA79AE00C931CB /* DayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
@@ -54,6 +59,7 @@
 		63DD90FD19FAB23000C931CB /* CalendarHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeader.swift; sourceTree = "<group>"; };
 		63DD90FF19FAB4CC00C931CB /* MonthCalendarCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCalendarCollectionLayout.swift; sourceTree = "<group>"; };
 		63DD910119FAE8AC00C931CB /* WeekdaySymbolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekdaySymbolCell.swift; sourceTree = "<group>"; };
+		63F8EE7F1A102232001C5F5B /* NSCalendarExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCalendarExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				639EBD8019FD72D8007D40D0 /* NSCalendarExtension.swift */,
+				63094AA81A10128D0081978A /* NSDateExtension.swift */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -142,8 +149,9 @@
 		63DD90E419FA5F0100C931CB /* CalendarControlTests */ = {
 			isa = PBXGroup;
 			children = (
-				63DD90E719FA5F0100C931CB /* CalendarControlTests.swift */,
 				63DD90E519FA5F0100C931CB /* Supporting Files */,
+				63094AAA1A101F4A0081978A /* NSDateExtensionTests.swift */,
+				63F8EE7F1A102232001C5F5B /* NSCalendarExtensionTests.swift */,
 			);
 			path = CalendarControlTests;
 			sourceTree = "<group>";
@@ -264,6 +272,7 @@
 				63DD90F219FA61C200C931CB /* CalendarView.swift in Sources */,
 				63DD90FA19FA996800C931CB /* CircleView.swift in Sources */,
 				63DD910219FAE8AC00C931CB /* WeekdaySymbolCell.swift in Sources */,
+				63094AA91A10128D0081978A /* NSDateExtension.swift in Sources */,
 				634FD68C1A05923000D795BA /* MonthNavigationHeader.swift in Sources */,
 				63DD90D219FA5F0000C931CB /* AppDelegate.swift in Sources */,
 			);
@@ -273,7 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63DD90E819FA5F0100C931CB /* CalendarControlTests.swift in Sources */,
+				63F8EE821A10232A001C5F5B /* NSCalendarExtension.swift in Sources */,
+				63F8EE801A102232001C5F5B /* NSCalendarExtensionTests.swift in Sources */,
+				63094AAC1A1020770081978A /* NSDateExtension.swift in Sources */,
+				63094AAB1A101F4A0081978A /* NSDateExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

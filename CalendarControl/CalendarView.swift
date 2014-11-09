@@ -14,10 +14,13 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     private let calendar = NSCalendar.currentCalendar()
     
     private var currentDate: NSDate = NSDate()
-    lazy private var daysOffset: Int = {
-        return self.calendar.weekdayForFirstOfTheMonthFor(self.currentDate)
-    }()
+    private var displayedDate: NSDate = NSDate()
     
+    private var daysOffset: Int  {
+        get {
+            return self.calendar.weekdayForFirstOfTheMonthFor(self.displayedDate)
+        }
+    }
     
     lazy var daysCollectionView: UICollectionView = {
         var collectionView = UICollectionView(frame: self.frame, collectionViewLayout: MonthCalendarCollectionLayout(frame: self.frame, headerSize: CGSizeMake(self.frame.width, 80)))
@@ -47,12 +50,18 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
             var dayToDisplay = indexPath.row - daysOffset + 1
             cell.updateWithDay(dayToDisplay)
             
-            if dayToDisplay == calendar.dayOfTheMonthFor(currentDate) {
+            if isCellForCurrentDay(dayToDisplay) {
                 cell.select()
             }
+        } else {
+            cell.clear()
         }
         
         return cell
+    }
+    
+    private func isCellForCurrentDay(day: Int) -> Bool {
+        return currentDate.isSameDay(displayedDate, calendar: calendar) && day == calendar.dayOfTheMonthFor(currentDate)
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -62,7 +71,7 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         var header: CalendarHeader =  collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerCellIdentifier, forIndexPath: indexPath) as CalendarHeader
         
-        header.displayMonth = "\(calendar.monthNameFor(currentDate)) \(calendar.basicComponents(currentDate).year)"
+        header.displayMonth = "\(calendar.monthNameFor(displayedDate)) \(calendar.basicComponents(displayedDate).year)"
         
         return header
     }
@@ -90,5 +99,13 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     private func isValidDayCell(indexPath: NSIndexPath) -> Bool {
         return indexPath.row >= daysOffset
+    }
+    
+    func displayDate(date: NSDate) {
+        displayedDate = date
+        
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.daysCollectionView.reloadData()
+        })
     }
 }
