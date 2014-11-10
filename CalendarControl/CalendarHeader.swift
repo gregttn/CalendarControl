@@ -44,7 +44,7 @@ class CalendarHeader: UICollectionReusableView, UICollectionViewDelegate, UIColl
         collectionView.dataSource = self
         collectionView.scrollEnabled = false
         collectionView.registerClass(WeekdaySymbolCell.self, forCellWithReuseIdentifier: cellIdentifier)
-        collectionView.registerClass(MonthNavigationHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier)
+        collectionView.registerClass(NavigationHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         
         return collectionView
     }
@@ -65,7 +65,7 @@ class CalendarHeader: UICollectionReusableView, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        var header: MonthNavigationHeader =  collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier, forIndexPath: indexPath) as MonthNavigationHeader
+        var header: NavigationHeader =  collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier, forIndexPath: indexPath) as NavigationHeader
         header.title.text = displayMonth
         
         return header
@@ -74,7 +74,7 @@ class CalendarHeader: UICollectionReusableView, UICollectionViewDelegate, UIColl
     func updateMonthHeader(text: String) {
         displayMonth = text
         if var collectionView = calendarInfo {
-            var header: MonthNavigationHeader =  collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier, forIndexPath: NSIndexPath(forItem: 0, inSection: 0)) as MonthNavigationHeader
+            var header: NavigationHeader =  collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier, forIndexPath: NSIndexPath(forItem: 0, inSection: 0)) as NavigationHeader
             
             header.title.text = displayMonth
         }

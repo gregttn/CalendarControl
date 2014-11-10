@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MonthNavigationHeader: UICollectionReusableView {
+class NavigationHeader: UICollectionReusableView {
     private let previousButtonTag = 11
     private let nextButtonTag = 12
    
-    let MonthNavigationHeaderNextMonthSelected: String = "MonthNavigationHeaderNextMonthSelected"
-    let MonthNavigationHeaderPreviousMonthSelected: String = "MonthNavigationHeaderNextMonthSelected"
+    let NavigationHeaderNextMonthSelected: String = "NavigationHeaderNextMonthSelected"
+    let NavigationHeaderPreviousMonthSelected: String = "NavigationHeaderNextMonthSelected"
     
     var title = UILabel()
     
@@ -69,9 +69,9 @@ class MonthNavigationHeader: UICollectionReusableView {
     func navigationButtonPressed(button: UIButton) {
         switch button.tag {
             case previousButtonTag:
-                notifyMonthChangeRequest(MonthNavigationHeaderPreviousMonthSelected)
+                notifyMonthChangeRequest(NavigationHeaderPreviousMonthSelected)
             case nextButtonTag:
-                notifyMonthChangeRequest(MonthNavigationHeaderNextMonthSelected)
+                notifyMonthChangeRequest(NavigationHeaderNextMonthSelected)
             default:
                 println("not known id")
         }
