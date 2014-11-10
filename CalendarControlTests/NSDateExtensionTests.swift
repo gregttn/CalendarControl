@@ -10,6 +10,7 @@ import Foundation
 import XCTest
 
 class NSDateExtensionTests: XCTestCase {
+    let calendar = NSCalendar.currentCalendar()
     
     override func setUp() {
         super.setUp()
@@ -41,5 +42,59 @@ class NSDateExtensionTests: XCTestCase {
         todayAtNine.hour = 9
         
         XCTAssertTrue(today.isSameDay(todayAtNine.date!, calendar: NSCalendar.currentCalendar()))
+    }
+    
+    func testNextMonth() {
+        let date = dateFor(1, month:11, year: 2014)
+        let nextMonth = date.nextMonth(calendar)
+        
+        let nextMonthComponents = calendar.basicComponents(nextMonth)
+        
+        XCTAssertEqual(nextMonthComponents.day, 1)
+        XCTAssertEqual(nextMonthComponents.month, 12)
+        XCTAssertEqual(nextMonthComponents.year, 2014)
+    }
+    
+    func testNextMonthShouldRolloverToNextYear() {
+        let date = dateFor(1, month:12, year: 2014)
+        let nextMonth = date.nextMonth(calendar)
+        
+        let nextMonthComponents = calendar.basicComponents(nextMonth)
+        
+        XCTAssertEqual(nextMonthComponents.day, 1)
+        XCTAssertEqual(nextMonthComponents.month, 1)
+        XCTAssertEqual(nextMonthComponents.year, 2015)
+    }
+
+    func testPreviousMonth() {
+        let date = dateFor(1, month:11, year: 2014)
+        let previousMonth = date.previousMonth(calendar)
+        
+        let previousMonthComponents = calendar.basicComponents(previousMonth)
+        
+        XCTAssertEqual(previousMonthComponents.day, 1)
+        XCTAssertEqual(previousMonthComponents.month, 10)
+        XCTAssertEqual(previousMonthComponents.year, 2014)
+    }
+    
+    func testPreviousMonthShouldRollbackToPreviousYear() {
+        let date = dateFor(1, month:1, year: 2015)
+        let previousMonth = date.previousMonth(calendar)
+        
+        let previousMonthComponents = calendar.basicComponents(previousMonth)
+        
+        XCTAssertEqual(previousMonthComponents.day, 1)
+        XCTAssertEqual(previousMonthComponents.month, 12)
+        XCTAssertEqual(previousMonthComponents.year, 2014)
+    }
+    
+    private func dateFor(day: Int, month: Int, year: Int) -> NSDate {
+        var dateComponents = NSDateComponents()
+        dateComponents.calendar = calendar
+        dateComponents.day = day
+        dateComponents.month = month
+        dateComponents.year = year
+        
+        return dateComponents.date!
     }
 }

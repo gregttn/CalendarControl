@@ -15,4 +15,19 @@ extension NSDate {
         
         return dateComponents == selfComponents
     }
+    
+    func nextMonth(calendar: NSCalendar) -> NSDate {
+        return plusMonths(1, calendar: calendar)
+    }
+    
+    func previousMonth(calendar: NSCalendar) -> NSDate {
+        return plusMonths(-1, calendar: calendar)
+    }
+    
+    func plusMonths(months: Int, calendar: NSCalendar) -> NSDate {
+        var dateComponents = NSDateComponents()
+        dateComponents.month = months
+        
+        return calendar.dateByAddingComponents(dateComponents, toDate: self, options: NSCalendarOptions.allZeros)!
+    }
 }
