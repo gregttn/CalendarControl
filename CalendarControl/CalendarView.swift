@@ -37,6 +37,9 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     override func willMoveToSuperview(newSuperview: UIView?) {
         addSubview(daysCollectionView)
         daysCollectionView.reloadData()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "displayNextMonth", name: NavigationHeaderNextMonthSelected, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "displayPreviousMonth", name: NavigationHeaderPreviousMonthSelected, object: nil)
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -52,7 +55,10 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
             
             if isCellForCurrentDay(dayToDisplay) {
                 cell.select()
+            } else {
+                cell.deselect()
             }
+            
         } else {
             cell.clear()
         }
@@ -71,7 +77,7 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         var header: CalendarHeader =  collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerCellIdentifier, forIndexPath: indexPath) as CalendarHeader
         
-        header.displayMonth = "\(calendar.monthNameFor(displayedDate)) \(calendar.basicComponents(displayedDate).year)"
+        header.updateMonthHeader("\(calendar.monthNameFor(displayedDate)) \(calendar.basicComponents(displayedDate).year)")
         
         return header
     }
@@ -107,5 +113,13 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.daysCollectionView.reloadData()
         })
+    }
+    
+    func displayNextMonth() {
+        displayDate(displayedDate.nextMonth(calendar))
+    }
+    
+    func displayPreviousMonth() {
+        displayDate(displayedDate.previousMonth(calendar))
     }
 }

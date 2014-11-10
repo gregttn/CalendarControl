@@ -73,10 +73,6 @@ class CalendarHeader: UICollectionReusableView, UICollectionViewDelegate, UIColl
     
     func updateMonthHeader(text: String) {
         displayMonth = text
-        if var collectionView = calendarInfo {
-            var header: NavigationHeader =  collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier, forIndexPath: NSIndexPath(forItem: 0, inSection: 0)) as NavigationHeader
-            
-            header.title.text = displayMonth
-        }
+        calendarInfo?.reloadData()
     }
 }

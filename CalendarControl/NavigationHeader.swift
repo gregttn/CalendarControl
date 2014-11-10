@@ -8,12 +8,12 @@
 
 import UIKit
 
+let NavigationHeaderNextMonthSelected: String = "NavigationHeaderNextMonthSelected"
+let NavigationHeaderPreviousMonthSelected: String = "NavigationHeaderPreviousMonthSelected"
+
 class NavigationHeader: UICollectionReusableView {
     private let previousButtonTag = 11
     private let nextButtonTag = 12
-   
-    let NavigationHeaderNextMonthSelected: String = "NavigationHeaderNextMonthSelected"
-    let NavigationHeaderPreviousMonthSelected: String = "NavigationHeaderNextMonthSelected"
     
     var title = UILabel()
     
@@ -78,6 +78,6 @@ class NavigationHeader: UICollectionReusableView {
     }
     
     private func notifyMonthChangeRequest(notification: String) {
-        NSNotificationCenter.defaultCenter().postNotificationName(notification, object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(notification, object: self)
     }
 }

@@ -85,8 +85,6 @@ class DayCell: UICollectionViewCell {
     }
     
     private func removeSelectedBackground(backgroundId: Int) {
-        if var marker = viewWithTag(backgroundId) {
-            marker.removeFromSuperview()
-        }
+        viewWithTag(backgroundId)?.removeFromSuperview()
     }
 }
