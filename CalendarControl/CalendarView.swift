@@ -37,9 +37,18 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     override func willMoveToSuperview(newSuperview: UIView?) {
         addSubview(daysCollectionView)
         daysCollectionView.reloadData()
-        
+    }
+    
+    override func didMoveToWindow() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "displayNextMonth", name: NavigationHeaderNextMonthSelected, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "displayPreviousMonth", name: NavigationHeaderPreviousMonthSelected, object: nil)
+    }
+    
+    override func willMoveToWindow(newWindow: UIWindow?) {
+        if newWindow == nil {
+            NSNotificationCenter.defaultCenter().removeObserver(self, name: NavigationHeaderNextMonthSelected, object: nil)
+            NSNotificationCenter.defaultCenter().removeObserver(self, name: NavigationHeaderPreviousMonthSelected, object: nil)
+        }
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
