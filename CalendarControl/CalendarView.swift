@@ -57,6 +57,7 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as DayCell
+        cell.clear()
         
         if isValidDayCell(indexPath) {
             var dayToDisplay = indexPath.row - daysOffset + 1
@@ -64,12 +65,7 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
             
             if isCellForCurrentDay(dayToDisplay) {
                 cell.select()
-            } else {
-                cell.deselect()
             }
-            
-        } else {
-            cell.clear()
         }
         
         return cell
@@ -80,7 +76,7 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return calendar.daysInMonthFor(currentDate) + daysOffset
+        return calendar.daysInMonthFor(displayedDate) + daysOffset
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {

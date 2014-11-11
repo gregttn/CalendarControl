@@ -33,6 +33,8 @@ class DayCell: UICollectionViewCell {
     
     func clear() {
         dayLabel.text = ""
+        deselect()
+        unhighlight()
     }
     
     private func createBestFrame() -> CGRect {
@@ -66,6 +68,8 @@ class DayCell: UICollectionViewCell {
     
     func deselect() {
         removeSelectedBackground(selectedBackgroundId)
+        
+        dayLabel.font = UIFont.systemFontOfSize(dayLabel.font.pointSize)
     }
     
     func highlight() {
