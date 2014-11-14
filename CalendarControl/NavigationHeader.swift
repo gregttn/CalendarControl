@@ -10,6 +10,7 @@ import UIKit
 
 let NavigationHeaderNextMonthSelected: String = "NavigationHeaderNextMonthSelected"
 let NavigationHeaderPreviousMonthSelected: String = "NavigationHeaderPreviousMonthSelected"
+let NavigationHeaderHeaderDoubleTapped: String = "NavigationHeaderHeaderDoubleTapped"
 
 class NavigationHeader: UICollectionReusableView {
     private let previousButtonTag = 11
@@ -39,7 +40,12 @@ class NavigationHeader: UICollectionReusableView {
         title.sizeToFit()
         title.textAlignment = NSTextAlignment.Center
         title.setTranslatesAutoresizingMaskIntoConstraints(false)
-        
+        title.userInteractionEnabled = true
+    
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: "headerDoubleTapped")
+        tapRecognizer.numberOfTapsRequired = 2
+        title.addGestureRecognizer(tapRecognizer)
+
         addSubview(title)
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[superview]-(<=1)-[label]", options: NSLayoutFormatOptions.AlignAllCenterY, metrics: nil, views: ["superview":self, "label":title]))
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[superview]-(<=1)-[label]", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: ["superview":self, "label":title]))
@@ -69,15 +75,19 @@ class NavigationHeader: UICollectionReusableView {
     func navigationButtonPressed(button: UIButton) {
         switch button.tag {
             case previousButtonTag:
-                notifyMonthChangeRequest(NavigationHeaderPreviousMonthSelected)
+                sendNotification(NavigationHeaderPreviousMonthSelected)
             case nextButtonTag:
-                notifyMonthChangeRequest(NavigationHeaderNextMonthSelected)
+                sendNotification(NavigationHeaderNextMonthSelected)
             default:
                 println("not known id")
         }
     }
     
-    private func notifyMonthChangeRequest(notification: String) {
+    private func sendNotification(notification: String) {
         NSNotificationCenter.defaultCenter().postNotificationName(notification, object: self)
+    }
+    
+    func headerDoubleTapped() {
+        sendNotification(NavigationHeaderHeaderDoubleTapped)
     }
 }

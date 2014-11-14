@@ -42,12 +42,14 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     override func didMoveToWindow() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "displayNextMonth", name: NavigationHeaderNextMonthSelected, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "displayPreviousMonth", name: NavigationHeaderPreviousMonthSelected, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "displayCurrentMonth", name: NavigationHeaderHeaderDoubleTapped, object: nil)
     }
     
     override func willMoveToWindow(newWindow: UIWindow?) {
         if newWindow == nil {
             NSNotificationCenter.defaultCenter().removeObserver(self, name: NavigationHeaderNextMonthSelected, object: nil)
             NSNotificationCenter.defaultCenter().removeObserver(self, name: NavigationHeaderPreviousMonthSelected, object: nil)
+            NSNotificationCenter.defaultCenter().removeObserver(self, name: NavigationHeaderHeaderDoubleTapped, object: nil)
         }
     }
     
@@ -126,5 +128,9 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     func displayPreviousMonth() {
         displayDate(displayedDate.previousMonth(calendar))
+    }
+    
+    func displayCurrentMonth() {
+        displayDate(currentDate)
     }
 }
