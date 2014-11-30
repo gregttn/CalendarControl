@@ -12,9 +12,22 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     private let cellIdentifier = "DayCell"
     private let headerCellIdentifier = "HeaderCell"
     private let calendar = NSCalendar.currentCalendar()
+    private let headerHeight: CGFloat = 80
     
     private var currentDate: NSDate = NSDate()
     private var displayedDate: NSDate = NSDate()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        sizeToFit()
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        sizeToFit()
+    }
     
     private var daysOffset: Int  {
         get {
@@ -23,7 +36,7 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     lazy var daysCollectionView: UICollectionView = {
-        var collectionView = UICollectionView(frame: self.frame, collectionViewLayout: MonthCalendarCollectionLayout(frame: self.frame, headerSize: CGSizeMake(self.frame.width, 80)))
+        var collectionView = UICollectionView(frame: self.frame, collectionViewLayout: MonthCalendarCollectionLayout(frame: self.frame, headerSize: CGSizeMake(self.frame.width, self.headerHeight)))
         collectionView.backgroundColor = UIColor.whiteColor()
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -71,6 +84,15 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         }
         
         return cell
+    }
+    
+    override func sizeThatFits(size: CGSize) -> CGSize {
+        let width: CGFloat = UIScreen.mainScreen().bounds.width
+        let height: CGFloat = MonthCalendarCollectionLayout.itemHeightForWidth(width) * CGFloat(daysOffset) + headerHeight
+        
+        let sizeThatFits = CGSize(width: width, height: height)
+        
+        return sizeThatFits;
     }
     
     private func isCellForCurrentDay(day: Int) -> Bool {

@@ -16,10 +16,9 @@ class CalendarViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = UIView(frame: UIScreen.mainScreen().applicationFrame)
-        view.backgroundColor = UIColor.whiteColor()
-        
-        calendarView.frame = CGRectMake(0, 0, view.frame.width, view.frame.height)
+        view = UIView(frame: UIScreen.mainScreen().applicationFrame)
+        view.backgroundColor = UIColor.lightGrayColor()
+        calendarView.sizeToFit()
         view.addSubview(calendarView)
     }
     

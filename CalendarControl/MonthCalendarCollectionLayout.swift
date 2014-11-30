@@ -57,4 +57,12 @@ class MonthCalendarCollectionLayout: UICollectionViewFlowLayout {
             itemSize = CGSize(width: cellSize, height: cellSize)
         }
     }
+    
+    class func itemHeightForWidth(width: CGFloat) -> CGFloat {
+        let defaultColumns: CGFloat = 7
+        let remainder = width % defaultColumns
+        let cellWidth = (width-remainder) / defaultColumns
+        
+        return cellWidth
+    }
 }
